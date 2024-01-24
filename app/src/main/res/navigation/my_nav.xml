@@ -18,5 +18,14 @@
         android:id="@+id/secondPageFragment"
         android:name="com.example.babytracker.ui.fragments.onboarding.SecondPageFragment"
         android:label="fragment_second_page"
-        tools:layout="@layout/fragment_second_page" />
+        tools:layout="@layout/fragment_second_page" >
+        <action
+            android:id="@+id/action_secondPageFragment_to_premiumFragment"
+            app:destination="@id/premiumFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/premiumFragment"
+        android:name="com.example.babytracker.ui.fragments.premium.PremiumFragment"
+        android:label="fragment_premium"
+        tools:layout="@layout/fragment_premium" />
 </navigation>

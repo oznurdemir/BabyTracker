@@ -6,5 +6,12 @@
     <string name="get_started">Get started with tracking your baby\'s \nfeedings, diaper changes, sleep patterns, \nand more...</string>
     <string name="stay_connec">Stay Connected \nwith Caregivers</string>
     <string name="share_acces">Share access to your baby\'s tracker with \nfamily members, babysitters, or healthcare \nproviders</string>
+    <string name="get_premium">Get Premium!</string>
+    <string name="share_the_c">Share the care</string>
+    <string name="all_in_one_">All-in-one baby tracker</string>
+    <string name="watch_your_">Watch your babys growth</string>
+    <string name="annual">Annual</string>
+    <string name="start">Start</string>
+    <string name="some_id">$30</string>
     <string name="next">Next</string>
 </resources>

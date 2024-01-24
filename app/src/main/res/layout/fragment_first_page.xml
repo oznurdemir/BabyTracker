@@ -80,7 +80,7 @@
         android:fontFamily="@font/poppins"
         android:text="@string/next"
         android:textColor="@color/white"
-        android:textSize="@dimen/size7"
+        android:textSize="@dimen/size8"
         app:layout_constraintBottom_toTopOf="@+id/viewBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
