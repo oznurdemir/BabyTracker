@@ -2,4 +2,9 @@
     <string name="app_name">BabyTracker</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="track_your_">Track Your Baby\'s \n Activities with Ease</string>
+    <string name="get_started">Get started with tracking your baby\'s \nfeedings, diaper changes, sleep patterns, \nand more...</string>
+    <string name="stay_connec">Stay Connected \nwith Caregivers</string>
+    <string name="share_acces">Share access to your baby\'s tracker with \nfamily members, babysitters, or healthcare \nproviders</string>
+    <string name="next">Next</string>
 </resources>
