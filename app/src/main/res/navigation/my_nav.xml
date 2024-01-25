@@ -36,5 +36,46 @@
         android:id="@+id/homeFragment"
         android:name="com.example.babytracker.ui.fragments.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_calenderFragment"
+            app:destination="@id/calenderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_feedingFragment"
+            app:destination="@id/feedingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_sleepFragment"
+            app:destination="@id/sleepFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_symptomsFragment"
+            app:destination="@id/symptomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.babytracker.ui.fragments.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.example.babytracker.ui.fragments.calender.CalenderFragment"
+        android:label="fragment_calender"
+        tools:layout="@layout/fragment_calender" />
+    <fragment
+        android:id="@+id/feedingFragment"
+        android:name="com.example.babytracker.ui.fragments.feeding.FeedingFragment"
+        android:label="fragment_feeding"
+        tools:layout="@layout/fragment_feeding" />
+    <fragment
+        android:id="@+id/sleepFragment"
+        android:name="com.example.babytracker.ui.fragments.sleep.SleepFragment"
+        android:label="fragment_sleep"
+        tools:layout="@layout/fragment_sleep" />
+    <fragment
+        android:id="@+id/symptomsFragment"
+        android:name="com.example.babytracker.ui.fragments.symptoms.SymptomsFragment"
+        android:label="fragment_symptoms"
+        tools:layout="@layout/fragment_symptoms" />
 </navigation>
