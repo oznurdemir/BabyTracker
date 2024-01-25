@@ -11,7 +11,11 @@
     <string name="all_in_one_">All-in-one baby tracker</string>
     <string name="watch_your_">Watch your babys growth</string>
     <string name="annual">Annual</string>
+    <string name="feeding">Feeding</string>
+    <string name="sleep">Sleep</string>
+    <string name="symptoms">Symptoms</string>
     <string name="start">Start</string>
     <string name="some_id">$30</string>
     <string name="next">Next</string>
+    <string name="home">Home</string>
 </resources>

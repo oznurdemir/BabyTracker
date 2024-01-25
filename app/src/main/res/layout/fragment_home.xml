@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/textViewHomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size12"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/home"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/size11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size16"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewHomeTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeTitle" />
+
+    <ImageView
+        android:id="@+id/imageViewCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size16"
+        android:src="@drawable/ic_calendar"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewHomeTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHomeTitle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonFeeding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/home_button"
+        android:backgroundTint="@color/feeding"
+        android:fontFamily="@font/poppins"
+        android:gravity="fill_vertical"
+        android:text="@string/feeding"
+        android:textColor="@color/white"
+        android:paddingLeft="@dimen/size30"
+        android:paddingTop="@dimen/size7"
+        android:paddingBottom="@dimen/size7"
+        android:textSize="@dimen/size11"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewHomeTitle" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size4"
+        android:elevation="@dimen/size2"
+        android:src="@drawable/home_page1"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonFeeding"
+        app:layout_constraintStart_toStartOf="@+id/buttonFeeding"
+        app:layout_constraintTop_toTopOf="@+id/buttonFeeding" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSleep"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size8"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/home_button"
+        android:backgroundTint="@color/sleep"
+        android:fontFamily="@font/poppins"
+        android:gravity="fill_vertical"
+        android:text="@string/sleep"
+        android:textColor="@color/white"
+        android:paddingLeft="@dimen/size30"
+        android:paddingTop="@dimen/size7"
+        android:paddingBottom="@dimen/size7"
+        android:textSize="@dimen/size11"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonFeeding" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSymptoms"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size8"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/home_button"
+        android:backgroundTint="@color/symptons"
+        android:fontFamily="@font/poppins"
+        android:gravity="fill_vertical"
+        android:text="@string/symptoms"
+        android:textColor="@color/white"
+        android:paddingLeft="@dimen/size30"
+        android:paddingTop="@dimen/size7"
+        android:paddingBottom="@dimen/size7"
+        android:textSize="@dimen/size11"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSleep" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:elevation="@dimen/size2"
+        android:src="@drawable/home_page2"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSleep"
+        app:layout_constraintStart_toStartOf="@+id/buttonSleep"
+        app:layout_constraintTop_toTopOf="@+id/buttonSleep" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:elevation="@dimen/size2"
+        android:src="@drawable/home_page3"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSymptoms"
+        app:layout_constraintStart_toStartOf="@+id/buttonSymptoms"
+        app:layout_constraintTop_toTopOf="@+id/buttonSymptoms" />
+</androidx.constraintlayout.widget.ConstraintLayout>
