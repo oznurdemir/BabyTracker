@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.settings.SettingsFragment">
+
+    <TextView
+        android:id="@+id/textViewSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size12"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/settings"
+        android:textColor="@color/main"
+        android:textSize="@dimen/size11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSettingsBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:src="@drawable/ic_back_ios"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSettingsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewSettingsTitle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonForwardPremium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/next_button"
+        android:backgroundTint="@color/main"
+        android:fontFamily="@font/poppins"
+        android:gravity="fill_vertical"
+        android:paddingLeft="@dimen/size30"
+        android:paddingTop="@dimen/size9"
+        android:paddingBottom="@dimen/size9"
+        android:text="@string/feeding"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size11"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSettingsTitle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size4"
+        android:elevation="@dimen/size2"
+        android:src="@drawable/settings_page1"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonForwardPremium"
+        app:layout_constraintStart_toStartOf="@+id/buttonForwardPremium"
+        app:layout_constraintTop_toTopOf="@+id/buttonForwardPremium" />
+
+    <ImageView
+        android:id="@+id/imageViewForwardPremium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size12"
+        android:elevation="@dimen/size2"
+        android:src="@drawable/ic_forward_ios_white"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonForwardPremium"
+        app:layout_constraintEnd_toEndOf="@+id/buttonForwardPremium"
+        app:layout_constraintTop_toTopOf="@+id/buttonForwardPremium" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSettingsItem"
+        android:layout_width="0dp"
+        android:layout_height="544dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonForwardPremium" />
+</androidx.constraintlayout.widget.ConstraintLayout>
