@@ -44,7 +44,7 @@
         android:paddingLeft="@dimen/size30"
         android:paddingTop="@dimen/size9"
         android:paddingBottom="@dimen/size9"
-        android:text="@string/feeding"
+        android:text="@string/get_premium1"
         android:textColor="@color/white"
         android:textSize="@dimen/size11"
         app:guidelineUseRtl="false"

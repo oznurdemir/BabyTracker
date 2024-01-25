@@ -17,5 +17,11 @@
     <string name="some_id">$30</string>
     <string name="next">Next</string>
     <string name="settings">Settings</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="terms_of_us">Terms of Use</string>
+    <string name="privacy_pol">Privacy Policy</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="restore_pur">Restore Purchase</string>
+    <string name="get_premium1">Get Premium</string>
     <string name="home">Home</string>
 </resources>
