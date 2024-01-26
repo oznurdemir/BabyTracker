@@ -94,6 +94,7 @@
         android:fontFamily="@font/poppins"
         android:text="@string/save"
         android:textColor="@color/white"
+        android:visibility="invisible"
         android:textSize="@dimen/size8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
