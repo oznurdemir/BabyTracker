@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main">#4625C3</color>
     <color name="light_grey">#F3F3F3</color>
+    <color name="grey">#C2C2C2</color>
     <color name="feeding">#9B64FF</color>
     <color name="sleep">#635AFF</color>
     <color name="symptons">#FFc664</color>
