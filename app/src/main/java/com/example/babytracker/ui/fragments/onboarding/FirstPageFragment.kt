@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.babytracker.R
 import com.example.babytracker.databinding.FragmentFirstPageBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FirstPageFragment : Fragment() {
     private lateinit var binding : FragmentFirstPageBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

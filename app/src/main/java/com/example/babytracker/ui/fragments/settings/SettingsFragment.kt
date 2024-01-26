@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.babytracker.R
 import com.example.babytracker.databinding.FragmentSettingsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SettingsFragment : Fragment() {
     private lateinit var binding: FragmentSettingsBinding
     private lateinit var settingsItemAdapter: SettingsItemAdapter

@@ -4,12 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.babytracker.data.entity.SettingsItem
 import com.example.babytracker.repository.BabyTrackerRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SettingsViewModel : ViewModel() {
-    val btRepo = BabyTrackerRepository()
+@HiltViewModel
+class SettingsViewModel @Inject constructor(val btRepo : BabyTrackerRepository): ViewModel() {
     var settingsItemList = MutableLiveData<List<SettingsItem>>()
 
     init {
