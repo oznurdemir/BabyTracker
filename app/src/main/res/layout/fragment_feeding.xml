@@ -56,7 +56,7 @@
         android:layout_marginEnd="@dimen/size12"
         android:background="@drawable/rounded_edittext"
         android:hint="@string/amount_ml_"
-        android:inputType="text"
+        android:inputType="number"
         android:padding="@dimen/size7"
         android:textColorHint="@color/grey"
         android:textSize="@dimen/size8"
@@ -94,9 +94,19 @@
         android:fontFamily="@font/poppins"
         android:text="@string/save"
         android:textColor="@color/white"
-        android:visibility="invisible"
         android:textSize="@dimen/size8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNote" />
+
+    <ImageView
+        android:id="@+id/imageViewChooseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size8"
+        android:src="@drawable/ic_time"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTime"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+        app:layout_constraintTop_toTopOf="@+id/editTextTime" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

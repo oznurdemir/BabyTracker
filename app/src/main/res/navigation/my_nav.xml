@@ -74,7 +74,11 @@
         android:id="@+id/feedingFragment"
         android:name="com.example.babytracker.ui.fragments.feeding.FeedingFragment"
         android:label="fragment_feeding"
-        tools:layout="@layout/fragment_feeding" />
+        tools:layout="@layout/fragment_feeding" >
+        <action
+            android:id="@+id/action_feedingFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/sleepFragment"
         android:name="com.example.babytracker.ui.fragments.sleep.SleepFragment"

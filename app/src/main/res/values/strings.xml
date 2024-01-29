@@ -28,4 +28,7 @@
     <string name="amount_ml_">Amount (ml)</string>
     <string name="note">Note</string>
     <string name="save">Save</string>
+    <string name="snackbar1">Please enter time and amount</string>
+    <string name="snackbar2">Saved!</string>
+    <string name="choose_time">Choose Time</string>
 </resources>
