@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.babytracker.R
@@ -30,9 +31,16 @@ class SettingsFragment : Fragment() {
             }
 
             recyclerViewSettingsItem.layoutManager = LinearLayoutManager(requireContext())
-            viewModel.settingsItemList.observe(viewLifecycleOwner){
-                settingsItemAdapter = SettingsItemAdapter(it, requireContext())
-                recyclerViewSettingsItem.adapter = settingsItemAdapter
+            lifecycleScope.launchWhenStarted {
+                /*
+                Bu kod parçası, settingsItemList akışını collect etmeye başladığında
+                ve bu işlem, fragment veya activity başladığında gerçekleşir.
+                Coroutine, fragment veya activity durduğunda (stopped) otomatik olarak iptal edilir.
+                 */
+                viewModel.settingsItemList.collect { settingsList ->
+                    settingsItemAdapter = SettingsItemAdapter(settingsList, requireContext())
+                    recyclerViewSettingsItem.adapter = settingsItemAdapter
+                }
             }
         }
         return binding.root
