@@ -31,4 +31,6 @@
     <string name="snackbar1">Please enter time and amount</string>
     <string name="snackbar2">Saved!</string>
     <string name="choose_time">Choose Time</string>
+    <string name="fell_sleep">Fell Sleep</string>
+    <string name="woke_up">Woke Up</string>
 </resources>
