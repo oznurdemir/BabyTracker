@@ -6,7 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class FeedingViewModel @Inject constructor(val btRepo : BabyTrackerRepository): ViewModel() {
+class FeedingViewModel @Inject constructor(private val btRepo : BabyTrackerRepository): ViewModel() {
     fun saveFeeding(time : String, amount : String, note : String){
         btRepo.saveFeeding(time, amount, note)
     }

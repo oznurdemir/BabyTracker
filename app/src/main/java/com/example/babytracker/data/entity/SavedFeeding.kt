@@ -1,6 +1,6 @@
 package com.example.babytracker.data.entity
 
-data class SavedItem(
+data class SavedFeeding(
     val time: String,
     val amount: String,
     val note: String,

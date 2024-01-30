@@ -9,6 +9,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -17,19 +18,30 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providesBabyTrackerDataSource(collectionReference: CollectionReference) : BabyTrackerDataSource{
-        return  BabyTrackerDataSource(collectionReference)
+    fun providesBabyTrackerDataSource(
+        @Named("feeding") feedingCollectionReference: CollectionReference,
+        @Named("sleep") sleepCollectionReference: CollectionReference
+    ): BabyTrackerDataSource {
+        return BabyTrackerDataSource(feedingCollectionReference, sleepCollectionReference)
     }
 
     @Provides
     @Singleton
-    fun providesBabyTrackerRepository(btDataSource : BabyTrackerDataSource) : BabyTrackerRepository{
+    fun providesBabyTrackerRepository(btDataSource: BabyTrackerDataSource): BabyTrackerRepository {
         return BabyTrackerRepository(btDataSource)
     }
 
     @Provides
     @Singleton
-    fun providesCollectionReference() :CollectionReference {
+    @Named("feeding")
+    fun providesFeedingCollectionReference(): CollectionReference {
         return Firebase.firestore.collection("Feeding")
+    }
+
+    @Provides
+    @Singleton
+    @Named("sleep")
+    fun providesSleepCollectionReference(): CollectionReference {
+        return Firebase.firestore.collection("Sleep")
     }
 }

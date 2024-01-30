@@ -1,7 +1,7 @@
-package com.example.babytracker.ui.fragments.feeding
+package com.example.babytracker.ui.fragments.sleep
 
 import android.os.Bundle
-import android.text.format.DateFormat.is24HourFormat
+import android.text.format.DateFormat
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,39 +9,42 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.babytracker.R
-import com.example.babytracker.databinding.FragmentFeedingBinding
+import com.example.babytracker.databinding.FragmentSleepBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class FeedingFragment : Fragment() {
-    private lateinit var binding: FragmentFeedingBinding
-    private lateinit var viewModel: FeedingViewModel
-    private var time = ""
-    private var amount = ""
+class SleepFragment : Fragment() {
+    private lateinit var binding: FragmentSleepBinding
+    private lateinit var viewModel: SleepViewModel
+    private var fellTime = ""
+    private var wokeTime = ""
     private var note = ""
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFeedingBinding.inflate(inflater, container, false)
-        binding.imageViewFeedingBack.setOnClickListener {
-            findNavController().navigate(R.id.action_feedingFragment_to_homeFragment)
+        binding = FragmentSleepBinding.inflate(inflater, container, false)
+        binding.imageViewSleepBack.setOnClickListener {
+            findNavController().navigate(R.id.action_sleepFragment_to_homeFragment)
         }
-        binding.imageViewChooseTime.setOnClickListener {
+        binding.imageViewChooseTime1.setOnClickListener {
             openTimePicker { selectedTime ->
-                binding.editTextTime.setText(selectedTime)
-                time = selectedTime
+                binding.editTextTime1.setText(selectedTime)
+                fellTime = selectedTime
             }
         }
-        binding.buttonSaveFeeding.setOnClickListener {
-            amount = "${binding.editTextAmount.text} ml"
-            note = binding.editTextNote.text.toString()
-            if (time.isNotEmpty() && amount.length > 3) {
-                save(time, amount, note)
+        binding.imageViewChooseTime2.setOnClickListener {
+            openTimePicker { selectedTime ->
+                binding.editTextTime2.setText(selectedTime)
+                wokeTime = selectedTime
+            }
+        }
+        binding.buttonSaveSleep.setOnClickListener {
+            note = binding.editTextNoteSleep.text.toString()
+            if (fellTime.isNotEmpty() && wokeTime.isNotEmpty()){
+                save(fellTime,wokeTime,note)
                 Snackbar.make(it, R.string.snackbar2, Snackbar.LENGTH_SHORT).show()
             } else {
                 Snackbar.make(it, R.string.snackbar1, Snackbar.LENGTH_SHORT).show()
@@ -50,12 +53,12 @@ class FeedingFragment : Fragment() {
         return binding.root
     }
 
-    private fun save(time: String, amount: String, note: String) {
-        viewModel.saveFeeding(time, amount, note)
+    private fun save(fellTime: String, wokeTime: String, note: String) {
+        viewModel.saveSleep(fellTime, wokeTime, note)
     }
 
     private fun openTimePicker(callback: (String) -> Unit) {
-        val isSystem24Hour = is24HourFormat(requireContext())
+        val isSystem24Hour = DateFormat.is24HourFormat(requireContext())
         val clockFormat = if (isSystem24Hour) TimeFormat.CLOCK_24H else TimeFormat.CLOCK_12H
         val picker = MaterialTimePicker.Builder()
             .setTimeFormat(clockFormat)
@@ -87,7 +90,7 @@ class FeedingFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val tempViewModel: FeedingViewModel by viewModels()
+        val tempViewModel: SleepViewModel by viewModels()
         viewModel = tempViewModel
     }
 }
