@@ -30,6 +30,7 @@ class SleepFragment : Fragment() {
             findNavController().navigate(R.id.action_sleepFragment_to_homeFragment)
         }
         binding.imageViewChooseTime1.setOnClickListener {
+
             openTimePicker { selectedTime ->
                 binding.editTextTime1.setText(selectedTime)
                 fellTime = selectedTime

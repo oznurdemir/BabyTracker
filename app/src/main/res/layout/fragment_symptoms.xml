@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.symptoms.SymptomsFragment">
+
+    <TextView
+        android:id="@+id/textViewSymptomsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size12"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/symptoms"
+        android:textColor="@color/main"
+        android:textSize="@dimen/size11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSymptomsBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:src="@drawable/ic_back_ios"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSymptomsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewSymptomsTitle" />
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/time"
+        android:inputType="text"
+        android:padding="@dimen/size7"
+        android:textColorHint="@color/grey"
+        android:textSize="@dimen/size8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSymptomsTitle" />
+
+    <EditText
+        android:id="@+id/editTextSymptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/symptoms"
+        android:inputType="text"
+        android:padding="@dimen/size7"
+        android:textColorHint="@color/grey"
+        android:textSize="@dimen/size8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+
+    <EditText
+        android:id="@+id/editTextNoteSymptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:layout_marginTop="@dimen/size16"
+        android:layout_marginEnd="@dimen/size12"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/note"
+        android:inputType="text"
+        android:paddingLeft="@dimen/size7"
+        android:paddingTop="@dimen/size7"
+        android:paddingBottom="@dimen/size110"
+        android:textColorHint="@color/grey"
+        android:textSize="@dimen/size8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSymptoms" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonSaveSymptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size16"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="@dimen/size16"
+        android:background="@drawable/next_button"
+        android:fontFamily="@font/poppins"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNoteSymptoms" />
+
+    <ImageView
+        android:id="@+id/imageViewChooseSymptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size8"
+        android:src="@drawable/ic_forward_ios_grey"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSymptoms"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSymptoms"
+        app:layout_constraintTop_toTopOf="@+id/editTextSymptoms" />
+
+    <ImageView
+        android:id="@+id/imageViewChooseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/size8"
+        android:src="@drawable/ic_time"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTime"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+        app:layout_constraintTop_toTopOf="@+id/editTextTime" />
+</androidx.constraintlayout.widget.ConstraintLayout>
