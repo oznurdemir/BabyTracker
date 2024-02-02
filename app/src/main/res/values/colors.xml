@@ -8,4 +8,5 @@
     <color name="feeding">#9B64FF</color>
     <color name="sleep">#635AFF</color>
     <color name="symptons">#FFc664</color>
+    <color name="fill_color">#F3F3F3</color>
 </resources>
