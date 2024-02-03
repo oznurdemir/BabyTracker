@@ -1,0 +1,18 @@
+<!-- res/drawable/selected_cardview.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#8A3AF8"
+                android:endColor="#547EFF"
+                android:angle="270" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+    <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+        <shape>
+            <solid android:color="@color/fill_color" />
+            <corners android:radius="25dp" />
+        </shape>
+    </item>
+</layer-list>

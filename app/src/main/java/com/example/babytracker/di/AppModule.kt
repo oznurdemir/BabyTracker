@@ -20,9 +20,10 @@ class AppModule {
     @Singleton
     fun providesBabyTrackerDataSource(
         @Named("feeding") feedingCollectionReference: CollectionReference,
-        @Named("sleep") sleepCollectionReference: CollectionReference
+        @Named("sleep") sleepCollectionReference: CollectionReference,
+        @Named("symptoms") symptomsCollectionReference: CollectionReference
     ): BabyTrackerDataSource {
-        return BabyTrackerDataSource(feedingCollectionReference, sleepCollectionReference)
+        return BabyTrackerDataSource(feedingCollectionReference, sleepCollectionReference, symptomsCollectionReference)
     }
 
     @Provides
@@ -43,5 +44,12 @@ class AppModule {
     @Named("sleep")
     fun providesSleepCollectionReference(): CollectionReference {
         return Firebase.firestore.collection("Sleep")
+    }
+
+    @Provides
+    @Singleton
+    @Named("symptoms")
+    fun providesSymptomsCollentionReferance() : CollectionReference {
+        return Firebase.firestore.collection("Symptoms")
     }
 }

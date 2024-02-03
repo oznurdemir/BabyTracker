@@ -29,7 +29,8 @@ class HomeFragment : Fragment() {
                 findNavController().navigate(R.id.action_homeFragment_to_sleepFragment)
             }
             buttonSymptoms.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_symptomsFragment)
+                val action = HomeFragmentDirections.actionHomeFragmentToSymptomsFragment("")
+                findNavController().navigate(action)
             }
         }
         return binding.root

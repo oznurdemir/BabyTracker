@@ -92,5 +92,21 @@
         android:id="@+id/symptomsFragment"
         android:name="com.example.babytracker.ui.fragments.symptoms.SymptomsFragment"
         android:label="fragment_symptoms"
-        tools:layout="@layout/fragment_symptoms" />
+        tools:layout="@layout/fragment_symptoms" >
+        <action
+            android:id="@+id/action_symptomsFragment_to_chooseSymptomsFragment"
+            app:destination="@id/chooseSymptomsFragment" />
+        <argument
+            android:name="symptoms"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseSymptomsFragment"
+        android:name="com.example.babytracker.ui.fragments.symptoms.choose_symptoms.ChooseSymptomsFragment"
+        android:label="fragment_choose_symptoms"
+        tools:layout="@layout/fragment_choose_symptoms" >
+        <action
+            android:id="@+id/action_chooseSymptomsFragment_to_symptomsFragment"
+            app:destination="@id/symptomsFragment" />
+    </fragment>
 </navigation>

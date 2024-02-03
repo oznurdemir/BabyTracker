@@ -12,4 +12,7 @@ class BabyTrackerRepository(private val btDataSource: BabyTrackerDataSource) {
         btDataSource.saveFeeding(time, amount, note)
     fun saveSleep(fellTime: String, wokeTime: String, note: String) =
         btDataSource.saveSleep(fellTime, wokeTime, note)
+
+    fun saveSymptoms(time : String, symptoms: String, note: String) =
+        btDataSource.saveSymptoms(time, symptoms, note)
 }

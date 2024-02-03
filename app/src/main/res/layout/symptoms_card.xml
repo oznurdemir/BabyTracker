@@ -5,9 +5,9 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/select_symptoms_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/fill_color"
         android:layout_marginTop="@dimen/size4"
         android:layout_marginLeft="@dimen/size8"
         app:cardCornerRadius="@dimen/size12"
@@ -16,9 +16,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardConstraint"
             android:layout_width="170dp"
             android:layout_height="157dp"
-            android:background="@color/fill_color">
+            android:background="@drawable/unselected_cardview">
 
             <ImageView
                 android:id="@+id/imageView12"

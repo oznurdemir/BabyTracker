@@ -30,7 +30,9 @@
     <string name="save">Save</string>
     <string name="snackbar1">Please enter time and amount</string>
     <string name="snackbar2">Saved!</string>
+    <string name="snackbar_symptos">Please enter time and symptoms</string>
     <string name="choose_time">Choose Time</string>
     <string name="fell_sleep">Fell Sleep</string>
     <string name="woke_up">Woke Up</string>
+    <string name="runny_nose">Runny Nose</string>
 </resources>
