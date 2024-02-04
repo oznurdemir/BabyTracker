@@ -35,4 +35,6 @@
     <string name="fell_sleep">Fell Sleep</string>
     <string name="woke_up">Woke Up</string>
     <string name="runny_nose">Runny Nose</string>
+    <string name="calender">Calender</string>
+    <string name="tue_feb_12">Tue, Feb 12</string>
 </resources>

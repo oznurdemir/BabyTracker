@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.calender.CalenderFragment">
+
+    <TextView
+        android:id="@+id/textViewCalendarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size12"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/calender"
+        android:textColor="@color/main"
+        android:textSize="@dimen/size11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewCalendarBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size12"
+        android:src="@drawable/ic_back_ios"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCalendarTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewCalendarTitle" />
+
+    <TextView
+        android:id="@+id/calender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size7"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/tue_feb_12"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewCalendarTitle"
+        app:layout_constraintStart_toStartOf="@+id/textViewCalendarTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCalendarTitle" />
+
+    <ImageView
+        android:id="@+id/imageViewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/all_icon"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewFeeding"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calender" />
+
+    <ImageView
+        android:id="@+id/imageViewFeeding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/feeding_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewAll"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSleep"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewAll"
+        app:layout_constraintTop_toTopOf="@+id/imageViewAll" />
+
+    <ImageView
+        android:id="@+id/imageViewSleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sleeping_icon"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewSymptoms"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewFeeding"
+        app:layout_constraintTop_toTopOf="@+id/imageViewFeeding" />
+
+    <ImageView
+        android:id="@+id/imageViewSymptoms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/symptoms_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageViewSleep"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSleep" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSleep" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

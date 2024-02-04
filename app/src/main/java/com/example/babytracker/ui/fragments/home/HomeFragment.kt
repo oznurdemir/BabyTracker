@@ -32,6 +32,9 @@ class HomeFragment : Fragment() {
                 val action = HomeFragmentDirections.actionHomeFragmentToSymptomsFragment("")
                 findNavController().navigate(action)
             }
+            imageViewCalendar.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_calenderFragment)
+            }
         }
         return binding.root
     }
