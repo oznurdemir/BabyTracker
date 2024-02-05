@@ -2,6 +2,7 @@ package com.example.babytracker.repository
 
 import com.example.babytracker.data.datasource.BabyTrackerDataSource
 import com.example.babytracker.data.entity.SettingsItem
+import com.example.babytracker.data.entity.calender.CalenderItem
 import com.example.babytracker.data.entity.symptoms.Choose_Symptoms
 import kotlinx.coroutines.flow.Flow
 
@@ -15,4 +16,8 @@ class BabyTrackerRepository(private val btDataSource: BabyTrackerDataSource) {
 
     fun saveSymptoms(time : String, symptoms: String, note: String) =
         btDataSource.saveSymptoms(time, symptoms, note)
+
+    suspend fun getSymptomsData(): Flow<List<CalenderItem>> {
+        return btDataSource.getSymptomsData()
+    }
 }

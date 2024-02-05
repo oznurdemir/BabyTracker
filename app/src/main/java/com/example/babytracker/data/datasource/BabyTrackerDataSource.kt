@@ -4,17 +4,22 @@ import com.example.babytracker.R
 import com.example.babytracker.data.entity.SavedFeeding
 import com.example.babytracker.data.entity.SavedSleep
 import com.example.babytracker.data.entity.SettingsItem
+import com.example.babytracker.data.entity.calender.CalenderItem
 import com.example.babytracker.data.entity.symptoms.Choose_Symptoms
+import com.example.babytracker.data.entity.symptoms.SavedSymptoms
 import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.Query
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.tasks.await
 import javax.inject.Named
 
 class BabyTrackerDataSource(
     @Named("feeding") private val feedingCollectionReference: CollectionReference,
-    @Named("sleep") private val sleepCollectionReference: CollectionReference
+    @Named("sleep") private val sleepCollectionReference: CollectionReference,
+    @Named("symptoms") private val symptomsCollectionReference: CollectionReference
 ) {
     suspend fun setList(): Flow<List<SettingsItem>> = flow {
         val s1 = SettingsItem(1, R.drawable.settings_page2, R.string.rate_us)
@@ -68,4 +73,30 @@ class BabyTrackerDataSource(
         sleepCollectionReference.add(newItem)
             .addOnFailureListener { }
     }
+
+    fun saveSymptoms(time : String, symptoms: String, note: String) {
+        val newItem = SavedSymptoms(time = time, symptoms = symptoms, note = note, category = "symptoms")
+        symptomsCollectionReference.add(newItem)
+            .addOnFailureListener { }
+    }
+
+    suspend fun getSymptomsData(): Flow<List<CalenderItem>> = flow {
+        val snapshot = symptomsCollectionReference
+            .orderBy("createdAt", Query.Direction.DESCENDING)
+            .get()
+            .await()
+
+        val symptomsData = snapshot.toObjects(SavedSymptoms::class.java)
+            .map { savedSymptoms ->
+                CalenderItem(
+                    time = savedSymptoms.time,
+                    category = savedSymptoms.category,
+                    createdAt = savedSymptoms.createdAt
+                )
+            }
+
+        emit(symptomsData)
+    }.flowOn(Dispatchers.IO)
+
+
 }

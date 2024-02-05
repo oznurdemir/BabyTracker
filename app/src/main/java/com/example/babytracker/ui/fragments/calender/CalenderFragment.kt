@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.babytracker.R
 import com.example.babytracker.databinding.FragmentCalenderBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -14,11 +16,26 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class CalenderFragment : Fragment() {
     private lateinit var binding: FragmentCalenderBinding
+    private lateinit var calenderAdapter: CalenderAdapter
+    private lateinit var viewModel: CalenderViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCalenderBinding.inflate(inflater, container, false)
+
+        // RecyclerView için adapter ve layoutManager ayarları
+        calenderAdapter = CalenderAdapter(emptyList()) // İlk başta boş liste ile oluşturuyoruz
+        binding.calenderItem.adapter = calenderAdapter
+        binding.calenderItem.layoutManager = LinearLayoutManager(requireContext())
+
         // Click olaylarını ayarla
         setupClickListeners()
+
+        // ViewModel'den gelen verileri gözlemle
+        viewModel.dataList.observe(viewLifecycleOwner) { calenderItems ->
+            // RecyclerView verilerini güncelle
+            calenderAdapter.updateData(calenderItems)
+        }
+
         return binding.root
     }
 
@@ -36,6 +53,9 @@ class CalenderFragment : Fragment() {
             imageView.setOnClickListener {
                 resetAllImageResources()
                 getImageViewByResource(resourceId)?.setImageResource(getSelectedResource(resourceId))
+                when (imageView) {
+                    binding.imageViewSymptoms -> viewModel.getSymptomsData()
+                }
             }
         }
 
@@ -68,7 +88,7 @@ class CalenderFragment : Fragment() {
             else -> defaultResource
         }
     }
-    // Drawable kaynağına göre ilgili ImageView'ı döndüren metot
+
     private fun getImageViewByResource(resourceId: Int): ImageView? {
         return when (resourceId) {
             R.drawable.all_icon -> binding.imageViewAll
@@ -77,5 +97,11 @@ class CalenderFragment : Fragment() {
             R.drawable.symptoms_icon -> binding.imageViewSymptoms
             else -> null
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val tempViewModel : CalenderViewModel by viewModels()
+        viewModel = tempViewModel
     }
 }
