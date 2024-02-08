@@ -28,4 +28,8 @@ class BabyTrackerRepository(private val btDataSource: BabyTrackerDataSource) {
     suspend fun getSleepData(): Flow<List<CalenderItem>> {
         return btDataSource.getSleepData()
     }
+
+    suspend fun getCombinedData(): Flow<List<CalenderItem>> {
+        return btDataSource.getCombinedData()
+    }
 }

@@ -54,6 +54,7 @@ class CalenderFragment : Fragment() {
                 resetAllImageResources()
                 getImageViewByResource(resourceId)?.setImageResource(getSelectedResource(resourceId))
                 when (imageView) {
+                    binding.imageViewAll -> viewModel.getAllData()
                     binding.imageViewSymptoms -> viewModel.getSymptomsData()
                     binding.imageViewFeeding -> viewModel.getFeedingData()
                     binding.imageViewSleep -> viewModel.getSleepData()

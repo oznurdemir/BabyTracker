@@ -11,6 +11,8 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.Query
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.tasks.await
@@ -85,7 +87,6 @@ class BabyTrackerDataSource(
             .orderBy("createdAt", Query.Direction.DESCENDING)
             .get()
             .await()
-
         val symptomsData = snapshot.toObjects(SavedSymptoms::class.java)
             .map { savedSymptoms ->
                 CalenderItem(
@@ -98,7 +99,6 @@ class BabyTrackerDataSource(
                     createdAt = savedSymptoms.createdAt
                 )
             }
-
         emit(symptomsData)
     }.flowOn(Dispatchers.IO)
 
@@ -107,7 +107,6 @@ class BabyTrackerDataSource(
             .orderBy("createdAt", Query.Direction.DESCENDING)
             .get()
             .await()
-
         val feedingData = snapshot.toObjects(SavedFeeding::class.java)
             .map { savedFeeding ->
                 CalenderItem(
@@ -120,7 +119,6 @@ class BabyTrackerDataSource(
                     createdAt = savedFeeding.createdAt
                 )
             }
-
         emit(feedingData)
     }.flowOn(Dispatchers.IO)
 
@@ -129,7 +127,6 @@ class BabyTrackerDataSource(
             .orderBy("createdAt", Query.Direction.DESCENDING)
             .get()
             .await()
-
         val sleepData = snapshot.toObjects(SavedSleep::class.java)
             .map { savedSleep ->
                 CalenderItem(
@@ -142,7 +139,14 @@ class BabyTrackerDataSource(
                     createdAt = savedSleep.createdAt
                 )
             }
-
         emit(sleepData)
+    }.flowOn(Dispatchers.IO)
+
+    suspend fun getCombinedData(): Flow<List<CalenderItem>> = flow {
+        val symptomsData = getSymptomsData().firstOrNull() ?: emptyList()
+        val feedingData = getFeedingData().firstOrNull() ?: emptyList()
+        val sleepData = getSleepData().firstOrNull() ?: emptyList()
+        val combinedData = (symptomsData + feedingData + sleepData).sortedByDescending { it.createdAt }
+        emit(combinedData)
     }.flowOn(Dispatchers.IO)
 }
