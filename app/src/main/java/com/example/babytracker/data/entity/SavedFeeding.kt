@@ -6,5 +6,8 @@ data class SavedFeeding(
     val note: String,
     val category : String,
     val createdAt: Long = System.currentTimeMillis()
-)
+){
+    // Boş yapıcı ekleyin
+    constructor() : this("", "", "", "")
+}
 

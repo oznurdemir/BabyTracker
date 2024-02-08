@@ -20,4 +20,12 @@ class CalenderViewModel @Inject constructor(private val btRepo: BabyTrackerRepos
             }
         }
     }
+
+    fun getFeedingData() {
+        viewModelScope.launch {
+            btRepo.getFeedingData().collect {
+                dataList.value = it
+            }
+        }
+    }
 }

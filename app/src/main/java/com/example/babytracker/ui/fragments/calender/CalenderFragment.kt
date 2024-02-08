@@ -55,6 +55,7 @@ class CalenderFragment : Fragment() {
                 getImageViewByResource(resourceId)?.setImageResource(getSelectedResource(resourceId))
                 when (imageView) {
                     binding.imageViewSymptoms -> viewModel.getSymptomsData()
+                    binding.imageViewFeeding -> viewModel.getFeedingData()
                 }
             }
         }

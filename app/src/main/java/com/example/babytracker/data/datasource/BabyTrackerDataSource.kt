@@ -90,12 +90,36 @@ class BabyTrackerDataSource(
             .map { savedSymptoms ->
                 CalenderItem(
                     time = savedSymptoms.time,
+                    note = savedSymptoms.note,
                     category = savedSymptoms.category,
+                    symptoms = savedSymptoms.symptoms,
+                    amount = "",
                     createdAt = savedSymptoms.createdAt
                 )
             }
 
         emit(symptomsData)
+    }.flowOn(Dispatchers.IO)
+
+    suspend fun getFeedingData(): Flow<List<CalenderItem>> = flow {
+        val snapshot = feedingCollectionReference
+            .orderBy("createdAt", Query.Direction.DESCENDING)
+            .get()
+            .await()
+
+        val feedingData = snapshot.toObjects(SavedFeeding::class.java)
+            .map { savedFeeding ->
+                CalenderItem(
+                    time = savedFeeding.time,
+                    note = savedFeeding.note,
+                    category = savedFeeding.category,
+                    symptoms = "",
+                    amount = savedFeeding.amount,
+                    createdAt = savedFeeding.createdAt
+                )
+            }
+
+        emit(feedingData)
     }.flowOn(Dispatchers.IO)
 
 

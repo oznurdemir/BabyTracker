@@ -17,18 +17,31 @@
             android:layout_height="wrap_content"
             android:background="@color/light_grey">
 
+            <TextView
+                android:id="@+id/textViewItemNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size8"
+                android:fontFamily="@font/poppins"
+                android:text="@string/next"
+                android:textColor="@color/text_color"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewItemIcon"
+                app:layout_constraintTop_toBottomOf="@+id/textViewItemName" />
+
             <ImageView
                 android:id="@+id/imageViewItemIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/size5"
+                android:paddingTop="@dimen/size1"
+                android:paddingBottom="@dimen/size1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.5"
-                app:srcCompat="@drawable/feeidng_icon_color"
-                android:paddingTop="@dimen/size1"
-                android:paddingBottom="@dimen/size1"/>
+                app:srcCompat="@drawable/feeidng_icon_color" />
 
             <TextView
                 android:id="@+id/textViewItemName"
@@ -38,11 +51,10 @@
                 android:fontFamily="@font/poppins"
                 android:text="@string/next"
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/size8"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/textViewItemNote"
                 app:layout_constraintStart_toEndOf="@+id/imageViewItemIcon"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.50" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView"
