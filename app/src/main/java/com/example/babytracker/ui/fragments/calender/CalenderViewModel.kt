@@ -28,4 +28,12 @@ class CalenderViewModel @Inject constructor(private val btRepo: BabyTrackerRepos
             }
         }
     }
+
+    fun getSleepData() {
+        viewModelScope.launch {
+            btRepo.getSleepData().collect {
+                dataList.value = it
+            }
+        }
+    }
 }

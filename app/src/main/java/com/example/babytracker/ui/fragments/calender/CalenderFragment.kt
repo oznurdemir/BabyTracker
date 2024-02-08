@@ -56,6 +56,7 @@ class CalenderFragment : Fragment() {
                 when (imageView) {
                     binding.imageViewSymptoms -> viewModel.getSymptomsData()
                     binding.imageViewFeeding -> viewModel.getFeedingData()
+                    binding.imageViewSleep -> viewModel.getSleepData()
                 }
             }
         }

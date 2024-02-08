@@ -94,6 +94,7 @@ class BabyTrackerDataSource(
                     category = savedSymptoms.category,
                     symptoms = savedSymptoms.symptoms,
                     amount = "",
+                    fellTime = "",
                     createdAt = savedSymptoms.createdAt
                 )
             }
@@ -115,6 +116,7 @@ class BabyTrackerDataSource(
                     category = savedFeeding.category,
                     symptoms = "",
                     amount = savedFeeding.amount,
+                    fellTime = "",
                     createdAt = savedFeeding.createdAt
                 )
             }
@@ -122,5 +124,25 @@ class BabyTrackerDataSource(
         emit(feedingData)
     }.flowOn(Dispatchers.IO)
 
+    suspend fun getSleepData(): Flow<List<CalenderItem>> = flow {
+        val snapshot = sleepCollectionReference
+            .orderBy("createdAt", Query.Direction.DESCENDING)
+            .get()
+            .await()
 
+        val sleepData = snapshot.toObjects(SavedSleep::class.java)
+            .map { savedSleep ->
+                CalenderItem(
+                    time = savedSleep.wokeTime,
+                    note = savedSleep.note,
+                    category = savedSleep.category,
+                    symptoms = "",
+                    amount = "",
+                    fellTime = savedSleep.fellTime,
+                    createdAt = savedSleep.createdAt
+                )
+            }
+
+        emit(sleepData)
+    }.flowOn(Dispatchers.IO)
 }

@@ -19,14 +19,18 @@
 
             <TextView
                 android:id="@+id/textViewItemNote"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
+                android:layout_marginEnd="@dimen/size12"
+                android:ellipsize="end"
                 android:fontFamily="@font/poppins"
+                android:maxLines="1"
                 android:text="@string/next"
                 android:textColor="@color/text_color"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/imageViewItemIcon"
                 app:layout_constraintTop_toBottomOf="@+id/textViewItemName" />
 
@@ -35,8 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/size5"
-                android:paddingTop="@dimen/size1"
-                android:paddingBottom="@dimen/size1"
+                android:paddingTop="@dimen/size3"
+                android:paddingBottom="@dimen/size3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -45,14 +49,16 @@
 
             <TextView
                 android:id="@+id/textViewItemName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size8"
+                android:layout_marginEnd="@dimen/size12"
                 android:fontFamily="@font/poppins"
                 android:text="@string/next"
                 android:textColor="@color/text_color"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewItemNote"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/imageViewItemIcon"
                 app:layout_constraintTop_toTopOf="parent" />
 

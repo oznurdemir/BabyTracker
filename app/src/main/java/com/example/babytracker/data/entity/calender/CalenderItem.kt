@@ -6,5 +6,6 @@ data class CalenderItem (
     val category: String,
     val symptoms: String,
     val amount: String,
+    val fellTime: String,
     val createdAt: Long = System.currentTimeMillis()
 )

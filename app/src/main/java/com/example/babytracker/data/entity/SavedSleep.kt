@@ -6,4 +6,7 @@ data class SavedSleep(
     val note: String,
     val category: String,
     val createdAt: Long = System.currentTimeMillis()
-)
+){
+    // Boş yapıcı ekleyin
+    constructor() : this("", "", "", "")
+}

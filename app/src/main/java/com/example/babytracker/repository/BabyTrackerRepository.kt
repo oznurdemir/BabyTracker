@@ -24,4 +24,8 @@ class BabyTrackerRepository(private val btDataSource: BabyTrackerDataSource) {
     suspend fun getFeedingData(): Flow<List<CalenderItem>> {
         return btDataSource.getFeedingData()
     }
+
+    suspend fun getSleepData(): Flow<List<CalenderItem>> {
+        return btDataSource.getSleepData()
+    }
 }
