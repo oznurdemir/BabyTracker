@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.babytracker.R
 import com.example.babytracker.databinding.FragmentCalenderBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @AndroidEntryPoint
 class CalenderFragment : Fragment() {
@@ -21,6 +24,12 @@ class CalenderFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentCalenderBinding.inflate(inflater, container, false)
+
+        // Get today's date
+        val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+        val todayDate = dateFormat.format(Date())
+        binding.calender.text = todayDate
+
 
         // RecyclerView için adapter ve layoutManager ayarları
         calenderAdapter = CalenderAdapter(emptyList()) // İlk başta boş liste ile oluşturuyoruz
