@@ -33,6 +33,9 @@ Flow: Implemented Flow for streamlined data emission and consumption, enhancing 
 
 Android Navigation Component: Utilized Android Navigation Component for seamless app navigation and enhanced user experience.
 
+![1707390168926](https://github.com/oznurdemir/BabyTracker/assets/95580098/5a8b4655-71fe-4d50-925a-88ff57ee91ab)
+
+
 
 
 Get Started
